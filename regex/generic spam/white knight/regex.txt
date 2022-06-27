@@ -1,0 +1,2 @@
+(\[.+\].*(scam|other world)).*
+(scamm|lur)er.*fake.*anti-?scams.*
