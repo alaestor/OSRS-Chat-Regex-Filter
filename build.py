@@ -24,7 +24,7 @@ def readlines(path: os.path) -> List[str]:
 	with open(path) as file:
 		return file.readlines()
 
-def compile_regex_patterns_from_file(path: os.path) -> List[re.Pattern]:
+def regex_patterns_from_file(path: os.path) -> List[re.Pattern]:
 	patterns = []
 	for regex in readlines(path):
 		patterns.append(re.compile(regex[:-1], flags=re.IGNORECASE))
@@ -34,19 +34,21 @@ def test_regex_against_samples(
 		directory: os.path,
 		regex_filename: str,
 		sample_filename: str,
-		detailed: bool = False) -> List[str] and bool and float:
-	patterns = compile_regex_patterns_from_file(os.path.join(directory, regex_filename))
+		detailed: bool = False
+		) -> List[str] and bool and float:
+	patterns = regex_patterns_from_file(os.path.join(directory, regex_filename))
 	detections = []
 	for sample in readlines(os.path.join(directory, sample_filename)):
 		detections.append(0)
 		for pattern in patterns:
 			if pattern.search(remove_accents(sample)):
 				detections[-1] += 1
-	percent = 0.0
-	success = False
 	if len(detections) > 0:
 		percent = sum(detections) / len(detections)
 		success = all(n >= 1 for n in detections) == True
+	else:
+		percent = 0.0
+		success = False
 	return [p.pattern + "\n" for p in patterns], success, percent
 
 def build(directory: os.path, stop_on_fail: bool = False):
