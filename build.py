@@ -21,12 +21,12 @@ def subfolders_containing(directory: os.path, filenames: List[str]) -> List[dir]
 
 def readlines(path: os.path) -> List[str]:
 	with open(path, encoding="UTF-8") as file:
-		return file.readlines()
+		return [line.rstrip() for line in file.readlines()]
 
 def regex_patterns_from_file(path: os.path) -> List[re.Pattern]:
 	patterns = []
 	for regex in readlines(path):
-		patterns.append(re.compile(regex[:-1], flags=re.IGNORECASE))
+		patterns.append(re.compile(regex, flags=re.IGNORECASE))
 	return patterns
 
 def test_regex_against_samples(
