@@ -87,7 +87,7 @@ def build(
 if __name__ == "__main__":
 	# todo: have optional argv
 	log_level = logging.INFO
-	log_file = __file__ + ".log"
+	log_file = os.path.splitext(__file__)[0] + ".log"
 	output_file = "output.regex.txt"
 	cwd = "regex"
 	stop_on_fail = False
