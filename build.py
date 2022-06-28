@@ -22,7 +22,7 @@ def subfolders_containing(directory: os.path, filenames: List[str]) -> List[dir]
 	return paths
 
 def readlines(path: os.path) -> List[str]:
-	with open(path, encoding="UTF-8") as file:
+	with open(path, encoding="UTF-8", mode="r") as file:
 		return [line.rstrip() for line in file.readlines()]
 
 def regex_patterns_from_file(path: os.path) -> List[re.Pattern]:
