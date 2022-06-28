@@ -37,10 +37,11 @@ def test_regex_against_samples(
 		) -> List[str] and bool and float:
 	patterns = regex_patterns_from_file(os.path.join(directory, regex_filename))
 	detections = []
-	for sample in readlines(os.path.join(directory, sample_filename)):
+	for line in readlines(os.path.join(directory, sample_filename)):
 		detections.append(0)
+		sample = remove_accents(line)
 		for pattern in patterns:
-			if pattern.search(remove_accents(sample)):
+			if pattern.search(sample):
 				detections[-1] += 1
 	if len(detections) > 0:
 		percent = sum(detections) / len(detections)
