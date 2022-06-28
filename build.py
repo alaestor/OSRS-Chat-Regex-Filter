@@ -4,8 +4,7 @@ import unicodedata
 from typing import List
 
 def remove_accents(string: str) -> str:
-	nkfd_form = unicodedata.normalize('NFKD', string)
-	return "".join([c for c in nkfd_form if not unicodedata.combining(c)])
+	return unicodedata.normalize("NFKD", string).encode("ASCII","ignore").decode("UTF-8")
 
 def subdirectories(directory: os.path) -> List[dir]:
     s = [f.path for f in os.scandir(directory) if f.is_dir()]
