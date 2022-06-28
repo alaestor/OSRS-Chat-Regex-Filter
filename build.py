@@ -37,12 +37,11 @@ def test_regex_against_samples(
 		detailed: bool = False) -> List[str] and bool and float:
 	patterns = compile_regex_patterns_from_file(os.path.join(directory, regex_filename))
 	detections = []
-	with open(os.path.join(directory, sample_filename)) as sample_file:
-		for sample in sample_file.readlines():
-			detections.append(0)
-			for pattern in patterns:
-				if pattern.search(remove_accents(sample)):
-					detections[-1] += 1
+	for sample in readlines(os.path.join(directory, sample_filename)):
+		detections.append(0)
+		for pattern in patterns:
+			if pattern.search(remove_accents(sample)):
+				detections[-1] += 1
 	percent = 0.0
 	success = False
 	if len(detections) > 0:
