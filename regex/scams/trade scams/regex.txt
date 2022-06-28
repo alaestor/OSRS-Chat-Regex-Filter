@@ -1,2 +1,2 @@
-Spending.+(max|2147).*
+Spending.+(max|2147)
 (d.*[ou].*b.*l.*i.*n.*g).*(all)?.+(coin|gp|money|gold|item)[sz]?

@@ -1,1 +1,1 @@
-(quitting.+search.+youtube).*
+(quitting.+search.+youtube)

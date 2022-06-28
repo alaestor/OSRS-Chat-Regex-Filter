@@ -27,7 +27,7 @@ def readlines(path: os.path) -> List[str]:
 def compile_regex_patterns_from_file(path: os.path) -> List[re.Pattern]:
 	patterns = []
 	for regex in readlines(path):
-		patterns.append(re.compile(regex, flags=re.IGNORECASE))
+		patterns.append(re.compile(regex[:-1], flags=re.IGNORECASE))
 	return patterns
 
 def test_regex_against_samples(
@@ -48,7 +48,7 @@ def test_regex_against_samples(
 	if len(detections) > 0:
 		percent = sum(detections) / len(detections)
 		success = all(n >= 1 for n in detections) == True
-	return [p.pattern for p in patterns], success, percent
+	return [p.pattern + "\n" for p in patterns], success, percent
 
 def build(directory: os.path, stop_on_fail: bool = False):
 	r = "regex.txt"
