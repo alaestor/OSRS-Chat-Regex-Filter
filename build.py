@@ -5,8 +5,6 @@ import logging
 import unicodedata
 from typing import List
 
-## TODO correct typehints; os.path and dir -> str
-
 ENCODING = "UTF-8"
 
 def remove_accents(string: str) -> str:
