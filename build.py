@@ -5,6 +5,8 @@ import logging
 import unicodedata
 from typing import List
 
+## TODO correct typehints; os.path and dir -> str
+
 ENCODING = "UTF-8"
 
 def remove_accents(string: str) -> str:
@@ -12,20 +14,20 @@ def remove_accents(string: str) -> str:
 		.encode("ASCII","ignore")\
 		.decode(ENCODING)
 
-def subdirectories(directory: os.path) -> List[dir]:
-    s = [f.path for f in os.scandir(directory) if f.is_dir()]
+def subdirectories(path: str) -> List[str]:
+    s = [f.path for f in os.scandir(path) if f.is_dir()]
     for d in list(s):
         s.extend(subdirectories(d))
     return s
 
-def subfolders_containing(directory: os.path, filenames: List[str]) -> List[dir]:
+def subfolders_containing(path: str, filenames: List[str]) -> List[str]:
 	paths = []
-	for subdir in subdirectories(directory):
+	for subdir in subdirectories(path):
 		if all(os.path.isfile(os.path.join(subdir, name)) for name in filenames):
 			paths.append(subdir);
 	return paths
 
-def readlines(path: os.path) -> List[str]:
+def readlines(path: str) -> List[str]:
 	with open(path, encoding=ENCODING, mode="r") as file:
 		return [line.rstrip() for line in file.readlines()]
 
@@ -59,10 +61,10 @@ def test_patterns(
 		success = all(n >= 1 for n in detections) == True
 	log_test_result(test_name, success or False, percent or 0.0)
 
-def regex_patterns_from_file(path: os.path) -> List[re.Pattern]:
+def regex_patterns_from_file(path: str) -> List[re.Pattern]:
 	return [re.compile(s, re.IGNORECASE) for s in readlines(path)]
 
-def build(path: os.path, stop_on_fail: bool = False) -> str:
+def build(path: str, stop_on_fail: bool = False) -> str:
 	regex_filename = "regex.txt"
 	sample_filename = "samples.txt"
 	logging.debug(f"Searching '{path}'")
@@ -82,8 +84,7 @@ if __name__ == "__main__":
 	output_filepath = None #"output.regex.txt"
 	cwd = "regex"
 	stop_on_fail = False
-	print_collated_regex_string = True  #False
-
+	print_collated_regex_string = True #False
 	try:
 		logging.basicConfig(
 			level=log_level,
