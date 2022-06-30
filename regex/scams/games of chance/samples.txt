@@ -1,7 +1,7 @@
 Welcome, to Coîn Rank! You will get a unique G.P. And I.D amount!
-Welcome, to Coîn Rank! Play with 10k, with bonuses every 5 bets! (2)
-Welcome, to Coîn Rank! Use: (!L !H !W !F !S !D !C !J) to play! (2)
-Welcome, to Coîn Rank! Beware of non-automated human accounts! (3)
+Welcome, to Coîn Rank! Play with 10k, with bonuses every 5 bets!
+Welcome, to Coîn Rank! Use: (!L !H !W !F !S !D !C !J) to play!
+Welcome, to Coîn Rank! Beware of non-automated human accounts!
 Trading with Äîòn Ålgòs {Current game: Dice (!D) } Id: 693575897
 Trading with [(!P)rivate] {Current game: Fight (!F) } Id: 98590270
 Welcome, to Coîn Rank! Use: (!P) to hide your name!
@@ -27,3 +27,5 @@ Nòtgâyöbby Lost by being Slain by Coin I1F3.
 !V enabled, Yíg Bònzò77 is wearing: Strength amulet (t)
 The current Jackpot number is 7! Good luck!
 Yîg Bònzò77, your fifth-bet bonus is active!
+!Verify
+!Sss
