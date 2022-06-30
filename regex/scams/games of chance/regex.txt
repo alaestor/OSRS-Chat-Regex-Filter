@@ -1,7 +1,7 @@
 ^welcome, to coin rank!
-^trading with \w.*\{current game.*\} id: \d{4,}
-\w (won|lost).*(by|with).*(being .*|destroying|dice|roll)
-\w (cashed in:|has been paid)
+^trading with .*\{current game.*\} id: \d{4,}
+(won|lost).*(by|with).*(being .*|destroying|dice|roll)
+(cashed in|has been paid): \d+([kmb]|.*gp) \@
 in progress. Please wait...$
 ^![a-zA-Z] enabled, .+:
 ^the current jackpot number is \d+
@@ -10,5 +10,4 @@ tired of those autotyper venezuelans
 !W for win please
 ^This machine only accepts Coins\.
 ^.+ Declined the bet\.
-!W for win please
 bet bonus is active!$

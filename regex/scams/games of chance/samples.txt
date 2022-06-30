@@ -3,6 +3,7 @@ Welcome, to Coîn Rank! Play with 10k, with bonuses every 5 bets! (2)
 Welcome, to Coîn Rank! Use: (!L !H !W !F !S !D !C !J) to play! (2)
 Welcome, to Coîn Rank! Beware of non-automated human accounts! (3)
 Trading with Äîòn Ålgòs {Current game: Dice (!D) } Id: 693575897
+Trading with [(!P)rivate] {Current game: Fight (!F) } Id: 98590270
 Welcome, to Coîn Rank! Use: (!P) to hide your name!
 Trading with Nòtgáyóbby {Current game: Fight (!F) } Id: 574878390
 Nòtgáyóbby has cashed in: 35K @ 01:32:14
@@ -13,6 +14,8 @@ Trading with Nòtgåyöbby {Current game: Fight (!F) } Id: 574878390
 Nòtgåyöbby has cashed in: 800K @ 01:33:03
 Nòtgåyöbby vs. Coin I1F3: Duel in progress. Please wait...
 Nòtgåyöbby Won (1.6M) by Destroying Coin I1F3.
+[(!P)rivate] Lost with a Roll of (1) Host Rolls: (62)
+[(!P)rivate] has been Paid: 600K @ 23:29:51
 Trading with Ègrèss Jåcòb {Current game: Dice (!D) } Id: 1652230228
 Ègrèss Jåcòb has Won 140K with a Roll of (66)
 Ègrèss Jåcòb has been Paid: 140K @ 01:36:42
