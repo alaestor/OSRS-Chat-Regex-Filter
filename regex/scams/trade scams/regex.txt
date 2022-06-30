@@ -1,5 +1,5 @@
 Spending.+(max|2147)
 (d.*[ou].*b.*l.*i.*n.*g).*(all)?.+(coin|gp|money|gold|item)[sz]?
-(s.*e.*l.*ls? me|b.*u.*y.*i.*n.*g|looking for|pay).*(bank|items?|(\d+([kmb]|gp))|(\w+ (and|&) \w+).*)
-(shows?).*\d+([kmb]|gp).*(buy|pay).*\d+([kmb]|gp)
+(s.*e.*l.*ls? me|b.*u.*y.*i.*n.*g|looking for|pay).*(bank|items?|(\d+.*([kmb]|gp))|(\w+ (and|&) \w+).*)
+(shows?).*\d+.*([kmb]|gp).*(buy|pay).*\d+([kmb]|gp)
 (what do you prefer cash or tokens)|(I('?ll)? buy it with my main, my main name is ".+")|(here take(.*a)? teleport im (at|in) \w+)
