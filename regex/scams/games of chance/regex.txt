@@ -10,3 +10,5 @@ tired of those autotyper venezuelans
 ^this machine only accepts coins\.
 ^.+ declined the bet\.
 bet bonus is active!$
+coin is the best
+^i'?(m|ve) already (up|won) \d+[kmb]
