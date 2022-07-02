@@ -28,7 +28,7 @@ def subfolders_containing(path: str, filenames: List[str]) -> List[str]:
 
 def readlines(path: str) -> List[str]:
 	with open(path, encoding=ENCODING, mode="r") as file:
-		return [line.rstrip() for line in file.readlines()]
+		return [line.rstrip() for line in file.readlines() if line[0] != '#']
 
 def log_test_result(test_name: str, passing: bool, percent: float) -> None:
 	state = f"{'Success:' if passing else 'FAILED:'}"

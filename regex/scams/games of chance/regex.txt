@@ -1,3 +1,8 @@
+####
+#
+#	"Coin" gambling bots
+#
+####
 ^welcome, to coin\s*(rank|games)!
 ^trading with .*\{current game.*\} id: \d{4,}
 (won|lost).*(being|destroying|dice|roll|slots \(.+\))
@@ -6,9 +11,14 @@ in progress. Please wait...$
 ^![a-zA-Z] enabled, .+:
 ^![LHWFSDCJVP].*
 ^the current jackpot number is \d+
-^tired of those autotyper venezuelans
 ^this machine only accepts coins\.
 ^.+ declined the bet\.
 bet bonus is active!$
+####
+#
+#	"Coin" bots pretending to be gambling players
+#
+####
+^tired of those autotyper venezuelans
 coin is the best
 ^i'?(m|ve) already (up|won) \d+[kmb]

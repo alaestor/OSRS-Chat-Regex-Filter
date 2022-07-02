@@ -1,8 +1,8 @@
-Run `python build.py -l -o` to test and output a combined list of all the `regex.txt` files.
-
 Runelite chat filter plugin must be set to be case insensitive and remove accents.
 
-The folder hierarchy is for sortability and separation. Folders can contain a pair of text files: one containing the relevant regular expressions (`regex.txt`) and another collection of samples (`samples.txt`) which they're tested against. More than 100% detections can be an indicator redundant work.
+Run `python build.py -l -o` to test and output a combined list of all the `regex.txt` files. Default `-o` will create an `output.regex.txt` file which will contain all the regex statements. Default `-l` will create a `build.log` file which will contain the log output (everything that is printed to the terminal).
+
+The folder hierarchy is for sortability and separation. Folders can contain a pair of text files: one containing the relevant regular expressions (`regex.txt`) and another collection of samples (`samples.txt`) which they're tested against. Lines beginning with `#` will be ignored as comments. More than 100% detections can be an indicator redundant work.
 
 Run `python build.py -h` to see all options:
 
