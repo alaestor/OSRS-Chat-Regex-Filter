@@ -1,1 +1,4 @@
-gpstall.*c.*([o0]|\(.*\)|\[.*\]).*(m|nn)
+gpstall.*c.*([o0]|\(.*\)|\[.*\]).*(m|nn|\/V\\)
+rsearn.*c.*([o0]|\(.*\)|\[.*\]).*(m|nn|\/V\\)
+^Gold Trade Platfom|P2Pah.*c.*([o0]|\(.*\)|\[.*\]).*(m|nn|\/V\\)
+\d+(\.\d+)?([kmb]|\s?gp).*complet(e|ing).*a?.*survey.*add.*\#\d\d\d\d

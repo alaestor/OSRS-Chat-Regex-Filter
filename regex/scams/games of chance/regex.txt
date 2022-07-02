@@ -5,7 +5,7 @@
 ####
 ^welcome, to coin\s*(rank|games)!
 ^trading with .*\{current game.*\} id: \d{4,}
-(won|lost).*(being|destroying|dice|roll|slots \(.+\))
+(w[o0]n|l[o0]st).*(being|destroying|dice|roll|sl[o0]ts \(.+\))
 (cashed in|has been paid): \d+(\.\d+)?([kmb]|\s?gp) \@ \d\d:\d\d:\d\d
 in progress. Please wait...$
 ^![a-zA-Z] enabled, .+:
@@ -22,3 +22,10 @@ bet bonus is active!$
 ^tired of those autotyper venezuelans
 coin is the best
 ^i'?(m|ve) already (up|won) \d+[kmb]
+####
+#
+#	f2p "jad 0m0m" et al
+#
+####
+(\(|!)[sj].*(sl[o0]ts|j[a@]ckp[o0]t).*\d+(\.\d+)?([kmb]|\s?gp)\-\d+(\.\d+)?([kmb]|\s?gp)
+has w[o0]n.*.*\d+(\.\d+)?([kmb]|\s?gp).*sl[o0t]ts?

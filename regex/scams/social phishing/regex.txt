@@ -1,0 +1,2 @@
+(quitting.+search.+youtube)
+giv(e|ing).*(away)?.*(twitch|youtube|twitter|discord)
