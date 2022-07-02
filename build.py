@@ -2,6 +2,7 @@ import os
 import re
 import sys
 import logging
+import argparse
 import unicodedata
 from typing import List
 
@@ -75,29 +76,91 @@ def build(path: str, stop_on_fail: bool = False) -> str:
 		regex_strings.extend([p.pattern for p in patterns])
 	return "\n".join(regex_strings)
 
+def argparser():
+	basename = os.path.basename(__file__)
+	scriptname = os.path.splitext(basename)[0]
+	default_cwd = "."
+	default_output_filepath = os.path.join(".", "output.regex.txt")
+	default_log_filepath = os.path.join(".", scriptname) + ".log"
+	parser = argparse.ArgumentParser(
+		prog="python " + basename,
+		description= "A simple regex tester & collator. "
+		+"Recursively searches a directory for 'regex.txt' and "
+		+"'samples.txt' file pairs. 'regex.txt' should contain one or "
+		+"more regular expressions (newline separated) intended to match "
+		+"against the 'samples.txt' test file. Each line of 'samples.txt' is "
+		+"searched by all of the regular expression: If every sample is "
+		+"matched by at least one expression, the test will pass. "
+		+"This script then concantinates all of the 'regex.txt' files as "
+		+"an output.\n"
+	)
+	parser.add_argument(
+		"-i", "--input", metavar="<FOLDERPATH>",
+		dest="input_filepath",
+		type=str, default=default_cwd,
+		help=f"File pair search path (default: \"{default_cwd}\")"
+	)
+	parser.add_argument(
+		"-o", "--output", metavar="FILEPATH",
+		dest="output_filepath", type=str, default=None,
+		nargs="?", const=default_output_filepath,
+		help="Outputs the concantinated regex strings to a file "
+			+ f"(default: \"{default_output_filepath}\")"
+	)
+	parser.add_argument(
+		"-l", "--log-file", metavar="FILEPATH",
+		dest="log_filepath", type=str, default=None,
+		nargs="?", const=default_log_filepath,
+		help="Enables logging to a file. Defaults to the script name "
+			+ f"(default: \"{default_log_filepath}\")"
+	)
+	parser.add_argument(
+		"-s", "--silent", metavar="", default=False,
+		action=argparse.BooleanOptionalAction,
+		help="Supress console output "
+			+"(except for exceptions and '--critical-test-errors')"
+	)
+	parser.add_argument(
+		"-v", "--verbose", metavar="", default=False,
+		action=argparse.BooleanOptionalAction,
+		help="Lowers logging threshold to DEBUG"
+	)
+	parser.add_argument(
+		"-p", "--print", metavar="", default=False,
+		action=argparse.BooleanOptionalAction,
+		help="Logs the final collated regex output string "
+			+ "(overrides '--silent')"
+	)
+	parser.add_argument(
+		"--critical-test-errors", metavar="", default=False,
+		action=argparse.BooleanOptionalAction,
+		help="Halts testing if a test fails by throwing an exception"
+	)
+	return parser.parse_args()
+
 if __name__ == "__main__":
-	# todo: have optional argv
-	log_level = logging.INFO
-	log_file = os.path.splitext(__file__)[0] + ".log"
-	output_filepath = None #"output.regex.txt"
-	cwd = "regex"
-	stop_on_fail = False
-	print_collated_regex_string = True #False
 	try:
+		args = argparser()
+		logging_handlers = []
+		if args.log_filepath != None:
+			logging_handlers.append(logging.FileHandler(args.log_filepath, encoding=ENCODING, mode="w"))
+		if args.silent == True:
+			if args.log_filepath == None:
+				logging.disable(logging.CRITICAL)
+		else:
+			logging_handlers.append(logging.StreamHandler(sys.stdout))
 		logging.basicConfig(
-			level=log_level,
+			level=logging.DEBUG if args.verbose else logging.INFO,
 			format="[%(levelname)s] %(message)s",
-			handlers=[
-				logging.FileHandler(log_file, encoding=ENCODING, mode="w"),
-				logging.StreamHandler(sys.stdout)
-			]
+			handlers=logging_handlers
 		)
-		output = build(cwd, stop_on_fail)
-		if output_filepath:
-			with open(output_filepath, mode="w") as output_file:
+		logging.debug(str(__file__) + " arguments: " + str(args))
+		output = build(args.input_filepath, args.critical_test_errors)
+		if args.output_filepath:
+			with open(args.output_filepath, mode="w") as output_file:
 				output_file.write(output)
-			logging.info("O written to " + output_filepath)
-		if print_collated_regex_string:
-			print("\n" + output + "\n")
+			logging.info("Output written to " + args.output_filepath)
+		if args.print:
+			logging.info("Collated output:\n\n" + output + "\n")
 	except Exception as e:
 		logging.critical(str(e))
