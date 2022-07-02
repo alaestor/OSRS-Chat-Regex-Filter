@@ -1,12 +1,12 @@
-^welcome, to coin rank!
+^welcome, to coin\s*(rank|games)!
 ^trading with .*\{current game.*\} id: \d{4,}
 (won|lost).*(being|destroying|dice|roll|slots \(.+\))
-(cashed in|has been paid): \d+([kmb]|.*gp) \@
+(cashed in|has been paid): \d+(\.\d+)?([kmb]|\s?gp) \@ \d\d:\d\d:\d\d
 in progress. Please wait...$
 ^![a-zA-Z] enabled, .+:
 ^![LHWFSDCJVP].*
 ^the current jackpot number is \d+
-tired of those autotyper venezuelans
+^tired of those autotyper venezuelans
 ^this machine only accepts coins\.
 ^.+ declined the bet\.
 bet bonus is active!$
