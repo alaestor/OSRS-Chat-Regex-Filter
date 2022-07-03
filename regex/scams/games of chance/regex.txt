@@ -3,10 +3,10 @@
 #	"Coin" gambling bots
 #
 ####
-^welcome, to coin\s*(rank|games)!
+^welc[o0]me,\s*(t[o0]|play).*(coin|rank|games|safe).*!
 ^trading with .*\{current game.*\} id: \d{4,}
 (w[o0]n|l[o0]st).*(being|destroying|dice|roll|sl[o0]ts \(.+\))
-(cashed in|has been paid): \d+(\.\d+)?([kmb]|\s?gp) \@ \d\d:\d\d:\d\d
+(cashed.*in|has.*(been.*paid|traded))\s*:\s*\(?\d+(\.\d+)?([kmb]|\s?gp)\)? \@ [\[\(]?\d\d:\d\d:\d\d[\]\)]?
 in progress. Please wait...$
 ^![a-zA-Z] enabled, .+:
 ^![LHWFSDCJVP].*
@@ -27,5 +27,11 @@ coin is the best
 #	f2p "jad 0m0m" et al
 #
 ####
-(\(|!)[sj].*(sl[o0]ts|j[a@]ckp[o0]t).*\d+(\.\d+)?([kmb]|\s?gp)\-\d+(\.\d+)?([kmb]|\s?gp)
+(\(|!)[sjl].*(sl[o0]ts|j[a@]ckp[o0]t|l[o0]w).*\d+(\.\d+)?([kmb]|\s?gp)\-\d+(\.\d+)?([kmb]|\s?gp)
 has w[o0]n.*.*\d+(\.\d+)?([kmb]|\s?gp).*sl[o0t]ts?
+####
+#
+#	f2p "host bet"
+#
+####
+place your bet.*fight.*\d+(\.\d+)?([kmb]|\s?gp)
