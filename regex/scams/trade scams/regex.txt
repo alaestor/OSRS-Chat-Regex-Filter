@@ -1,5 +1,7 @@
 Spending.+(max|2147)
-(d.*[ou].*b.*l.*i.*n.*g).*(all)?.+(coin|gp|money|gold|item)[sz]?
+^doubling$
+(d.*[ou].*b.*l.*(i.*n.*g|e)).*(all)?.+(coin|gp|money|gold|item)[sz]?
 (s.*e.*l.*ls? me|b.*u.*y.*i.*n.*g|looking for|pay).*(bank|items?|\d+(\.\d+)?([kmb]|\s?gp)|(\w+ (and|&) \w+).*)
-(shows?).*(\d+.*([kmb]|gp).*(buy|pay)|inv(ventory)?).*\d+(\.\d+)?([kmb]|\s?gp)
+(shows?).*(\d+(\.\d+)?([kmb]|\s?gp).*(buy|pay)|inv(ventory)?).*\d+(\.\d+)?([kmb]|\s?gp)
+\d+(\.\d+)?([kmb]|\s?gp).*(min|max|inv(ventory)?)*show.*now
 (what do you prefer cash or tokens)|(I('?ll)? buy it with my main, my main name is ".+")|(here take(.*a)? teleport im (at|in) \w+)
