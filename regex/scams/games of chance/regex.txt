@@ -3,7 +3,7 @@
 #	"Coin" gambling bots
 #
 ####
-^we[il]c[o0]me,\s*(t[o0]|play).*(coin|rank|games|safe).*!
+^we[il]c[o0]me,?\s*(t[o0]|play).*(coin|rank|games?|safe).*!
 ^trading with .*\{current game.*\} id: \d{4,}
 (w[o0]n|[il][o0]st).*(being|destroying|dice|roll|sl[o0]ts \(.+\))
 (cashed.*in|has.*(been.*paid|traded))\s*:\s*\(?\d+(\.\d+)?([kmb]|\s?gp)\)? \@ [\[\(]?\d\d:\d\d:\d\d[\]\)]?

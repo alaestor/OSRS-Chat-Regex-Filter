@@ -3,6 +3,7 @@
 #	"Coin" gambling bots
 #
 ####
+Welcome to Coîngame! Use: (!V) to be told amulet charge! (14)
 Welcome, to Coîn Rank! You will get a unique G.P. And I.D amount!
 Welcome, to Coîn Rank! Play with 10k, with bonuses every 5 bets!
 Welcome, to Coîn Rank! Use: (!L !H !W !F !S !D !C !J) to play!
